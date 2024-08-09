@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+body {
+    background-color: #FFFFCC;
+}
+
+
+#omikuji_title {
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 子要素（ボタンや画像）を中央揃え */
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-square {
+    display: inline-block;
+    text-align: center;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    background: #668ad8;/*ボタン色*/
+    color: #FFF;
+    border-bottom: solid 4px #627295;
+    border-radius: 3px;
+    margin-bottom: 2em;
+}
+.btn-square:active {
+    /*ボタンを押したとき*/
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);/*下に動く*/
+    border-bottom: none;/*線を消す*/
+}
+
+#omikuji_img {
+    width: 15%;
+    height: 15%;
+}
+
+#omikuji {
+    text-align: center;
+    letter-spacing: 0.2em;
+    padding: 0.5em 1em;
+    margin: 1em 15em;
+    font-weight: bold;
+    font-size: xx-large;
+    color: #FF6633;/*文字色*/
+    background: #FFF;
+    border: solid 3px #FF6633;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
