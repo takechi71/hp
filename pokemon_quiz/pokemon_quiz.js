@@ -45,10 +45,16 @@ async function generateQuiz() {
   // 答えとなるポケモンの基本情報以外の情報を取得.
   const response = await fetch(apiUrl2 + array_id[ansIndex]);
   parameter = await response.json();
+
+  // id="result", "detail"部分を初期化.
+  document.getElementById("result").innerHTML = "";
+  document.getElementById("detail").innerHTML = "";
+  document.getElementById("detail").classList.add("hidden");
   
   // 問題文を表示.
   document.getElementById("question").innerHTML = "What is this Pokemon?";
   
+  // シルエット画像を表示.
   silhouette_pokemon = document.getElementById("silhouette_pokemon");
   silhouette_pokemon.innerHTML = `
     <img src="${pokemons[ansIndex].sprites.front_default}" style="filter: brightness(0%); " alt="Pokemon Silhouette">    
@@ -58,7 +64,6 @@ async function generateQuiz() {
   // ボタンを表示するためのコンテナを取得
   const choice = document.getElementById("choice");
   choice.innerHTML = "";
-  document.getElementById("result").innerHTML = "";
 
   // 4つのボタンを生成
   pokemons.forEach((pokemon, index) => {
@@ -68,5 +73,4 @@ async function generateQuiz() {
     choice.appendChild(button);  // ボタンをコンテナに追加
   });
 
-  
   }

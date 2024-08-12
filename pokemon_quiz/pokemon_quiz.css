@@ -1,46 +1,51 @@
 .wrapper {
-    text-align: center;
-    width: 300px;
-    padding: 30px;
-  }
-  button {
-    background-color: lightgray;
-    padding: 10px 20px;
-    border-radius: 4px;
-    border: gray 2px solid;
-  }
-  button:hover {
-    cursor: pointer;
-  }
-  #button:active {
-    background-color: gray;
-  }
-  #silhouette_pokemon {
-    background-color: #dee8f1;
-    border-radius: 8px;
-    padding: 30px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  #detail {
-    background-color: #dee8f1;
-    border-radius: 8px;
-    padding: 30px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  p {
-    border-bottom: 3px solid #fff;
-  }
-
-  #choice {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2列のグリッド */
-    gap: 10px; /* ボタン間のスペース */
-    max-width: 300px;
-    margin: 20px auto;
+  text-align: center;
+  width: 300px;
+  padding: 30px;
 }
 
+  
 .hidden {
   display: none; /* 非表示にするクラス */
+}
+
+p {
+  border-bottom: 3px solid #fff;
+}
+
+button {
+  background-color: lightgray;
+  padding: 10px 20px;
+  border-radius: 4px;
+  border: gray 2px solid;
+}
+button:hover {
+  cursor: pointer;
+}
+#button:active {
+  background-color: gray;
+}
+
+#silhouette_pokemon {
+  background-color: #dee8f1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#choice {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2列のグリッド */
+  gap: 10px; /* ボタン間のスペース */
+  max-width: 300px;
+  margin: 20px auto;
+}
+  
+#detail {
+  background-color: #dee8f1;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-top: 20px;
 }
