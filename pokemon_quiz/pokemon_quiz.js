@@ -18,6 +18,7 @@ function checkAnswer(selectedIndex) {
       document.getElementById("result").innerHTML = "Incorrect!";
   }
   detail = document.getElementById("detail");
+  detail.innerHTML = "";
   detail.innerHTML = `
   <img src="${pokemons[ansIndex].sprites.front_default}" alt="Pokemon">
   <p>Name：${pokemons[ansIndex].name}</p>  
