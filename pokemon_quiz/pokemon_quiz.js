@@ -17,9 +17,8 @@ function checkAnswer(selectedIndex) {
   } else {
       document.getElementById("result").innerHTML = "Incorrect!";
   }
-  detail = document.getElementById("detail");
-  detail.innerHTML = "";
-  detail.innerHTML = `
+  
+  document.getElementById("pokemon").innerHTML = `
   <img src="${pokemons[ansIndex].sprites.front_default}" alt="Pokemon">
   <p>Name：${pokemons[ansIndex].name}</p>  
   <p>Weight: ${pokemons[ansIndex].weight / 10} kg</p>
@@ -27,8 +26,8 @@ function checkAnswer(selectedIndex) {
   <p>Type: ${pokemons[ansIndex].types.map(t => t.type.name).join(", ")}</p>
   <p>Description：${parameter.flavor_text_entries.find(entry => entry.language.name === 'en').flavor_text}</p>
 `;
-  detail.classList.remove("hidden");
 
+  document.getElementById("choice").innerHTML = "";
 }
 
 async function generateQuiz() {
@@ -46,31 +45,25 @@ async function generateQuiz() {
   const response = await fetch(apiUrl2 + array_id[ansIndex]);
   parameter = await response.json();
 
-  // id="result", "detail"部分を初期化.
+  // id="result"部分を初期化.
   document.getElementById("result").innerHTML = "";
-  document.getElementById("detail").innerHTML = "";
-  document.getElementById("detail").classList.add("hidden");
   
   // 問題文を表示.
   document.getElementById("question").innerHTML = "What is this Pokemon?";
   
   // シルエット画像を表示.
-  silhouette_pokemon = document.getElementById("silhouette_pokemon");
-  silhouette_pokemon.innerHTML = `
+  pokemon = document.getElementById("pokemon");
+  pokemon.innerHTML = `
     <img src="${pokemons[ansIndex].sprites.front_default}" style="filter: brightness(0%); " alt="Pokemon Silhouette">    
   `;
-  silhouette_pokemon.classList.remove("hidden");
-  
-  // ボタンを表示するためのコンテナを取得
-  const choice = document.getElementById("choice");
-  choice.innerHTML = "";
+  pokemon.classList.remove("hidden");
 
   // 4つのボタンを生成
   pokemons.forEach((pokemon, index) => {
     const button = document.createElement("button");
     button.textContent = pokemon.name;  // ボタンのテキストにポケモンの名前を設定
     button.addEventListener("click", () => checkAnswer(index));  // ボタンがクリックされたときにcheckAnswer関数を呼び出す
-    choice.appendChild(button);  // ボタンをコンテナに追加
+    document.getElementById("choice").appendChild(button);  // ボタンをコンテナに追加
   });
 
   }
